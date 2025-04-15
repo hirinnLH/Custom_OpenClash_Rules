@@ -1,4 +1,4 @@
-<h1 align="center">OpenClash 保姆级设置方案<br>&<br>全分组防泄漏订阅转换模板</h1>
+<h1 align="center">OpenClash 保姆级设置方案<br>&<br>全分组防泄漏订阅转换规则</h1>
 
 <p align="center">
 	<img src="https://img.shields.io/github/stars/Aethersailor/Custom_OpenClash_Rules?style=for-the-badge&logo=github" alt="GitHub stars">
@@ -27,12 +27,27 @@ OpenClash 无疑是 OpenWrt 中最强大的科学上网软件，它可以实现�
 
 欢迎 star ！
 
+***
+
 \>> Telegram Channel: [Custom_OpenClash_Rules | 通知频道](https://t.me/custom_openclash_rules)  
+
+本项目的更新内容将通过通知频道进行推送，建议订阅以便了解最新的更新内容。  
 
 \>> Telegram Group: [Custom_OpenClash_Rules | 交流群](https://t.me/custom_openclash_rules_group) 
 
+如遇问题，在群内反映可以更快得到解决。  
 
-本项目编写于2024年4月，为非盈利项目。转载本项目内容请注明本项目的仓库地址，感谢合作！  
+提问前请先阅读以下内容：[Stop-Ask-Questions-The-Stupid-Ways](https://github.com/dogfight360/Stop-Ask-Questions-The-Stupid-Ways)  
+
+***
+
+* 本项目编写于2024年4月，为非盈利项目。转载本项目内容请注明本项目的仓库地址，感谢合作！  
+
+* **本项目没有任何 YouTube 频道，也未在 YouTube 上传任何“教学视频”。**  
+
+* **本项目没有“借鉴”任何其他的教程或视频，如果你使用他人提供的教程或模板出现问题，请勿在本项目的 issue 或 TG 群组中提问，感谢配合。**  
+
+***
 
 # 特别声明  
 1. 本项目的主要目的是探索与学习 OpenWrt 系统插件 OpenClash，因此无法确保所有内容的合法性、完整性、准确性或有效性。
@@ -45,7 +60,9 @@ OpenClash 无疑是 OpenWrt 中最强大的科学上网软件，它可以实现�
 
 5. 本项目允许对项目内容进行任何形式的转载和二次创作，包括但不限于文章、视频等形式，转载时务必注明本项目的地址，但不得将相关内容转载于中华人民共和国境内的任何互联网平台之上。
 
-6. 本项目保留随时补充或修改免责声明的权利，凡使用本项目内容的个人或组织，均视为已接受此声明。  
+6. 本项目保留随时补充或修改免责声明的权利，凡使用本项目内容的个人或组织，均视为已接受此声明。
+
+***
 
 # 本项目设置方案及订阅转换模板介绍 
 
@@ -61,11 +78,11 @@ OpenClash 无疑是 OpenWrt 中最强大的科学上网软件，它可以实现�
   
 * **傻瓜化的设置操作。**  全程在 OpenClash 页面上操作，鼠标点击+复制粘贴几分钟即可完成完美设置，无需手搓配置，无需上传文件。
 
-* **丰富的分流策略组。**  包含流媒体服务、AI 工具、电商、游戏平台等在内的大量常见的分流策略组。
+* **丰富的分流策略组。**  包含流媒体服务、AI 工具、电商、游戏平台等在内的大量常见的分流策略组，同时也为轻量化需求用户提供简化版本的规则。
 
 * **节点地区分类测速优选。**  自动优选最快节点，不用自己折腾切换。
 
-* **Steam 访问优化。**  单独列出 Steam 规则并强制 Steam 下载 CDN 走直连，解决 Steam 下载 CDN 定位到海外的问题，确保 Steam 下载流量不走代理。
+* **Steam 访问优化。**  单独列出 Steam 规则并强制 Steam 下载 CDN 走直连，实现代理 Steam 的商店/社区流量的同时确保 Steam 下载流量不走代理。
 
 * **自动更新，长期无人值守。**  设置完成后即可长期无人值守，每日定时自动更新上游规则 GEO 数据库和大陆白名单等具有时效性要求的数据，无需自己动手。
 
@@ -75,23 +92,25 @@ OpenClash 无疑是 OpenWrt 中最强大的科学上网软件，它可以实现�
 
 * **更多的节点区域分组。**  增加包括英国、加拿大等国家的节点分组，参考本项目推荐机场的节点地区设定。
 
-* **自由添加冷门域名规则。**  增加了一些小众网站的直连规则，可以自行用自定义规则补充，亦可 PR 提交域名参与完善规则。  
+* **国内冷门域名处理机制。**  增加了一些小众网站的直连规则，可以自行用自定义规则补充自己需要直连的国内冷门域名，亦可 PR 提交域名参与完善规则。同时，维护者会根据反馈定期收集国内冷门域名提交至 GeoSite 的上游，以便在 OpenClash 中实现绕过内核。  
+
+***
 
 # 使用方法  
 
-> **本项目设置方案使用 Clash 的 `Fake-IP` 模式，不适用 Redir-Host 模式。**  
+> **本项目设置方案使用 OpenClash 的 `Fake-IP` 模式，不适用 Redir-Host 模式。**  
 
-> **本项目设置方案使用 OpenClash 的`绕过中国大陆`功能实现，因此配套的订阅转换模板不含任何大陆 IP 和域名的分流规则。**
-
-> **请勿试图在 OpenClash 以外的 Clash 软件中使用本项目的订阅转换模板，非 OpenClash 下使用可能会引起严重的分流问题。**  
+> **本项目依赖 OpenClash 的“绕过中国大陆”功能实现效果。**
 
 准备好你的订阅链接，然后按照本项目 Wiki 中的对应部分对 OpenClash 进行设置：[OpenClash-设置方案](https://github.com/Aethersailor/Custom_OpenClash_Rules/wiki/OpenClash-设置方案)  
 
-方案中已包括了本项目订阅转换模板的使用方法。  
+方案中已包括了本项目订阅转换模板的使用方法，根据描述，自行选择需要使用的规则模板即可。  
 
 以上方案非常详尽，只需按部就班设置即可。全部设置内容均基于 OpenClash 的 luci 设置页面，有手就行！  
 
 设置方案文字较多，务必逐字逐句认真阅读，不要忽略以防漏掉关键部分导致故障。且方案内含多处设置的讲解便于理解相关设置原理，有助于小白学习。  
+
+***
 
 # 一些说明  
 
@@ -105,7 +124,9 @@ OpenClash 无疑是 OpenWrt 中最强大的科学上网软件，它可以实现�
 
 若需要添加少量需要直连的国内冷门域名，建议使用 OpenClash 的自定义规则功能，插入相关的规则条目。  
 
-如果希望本项目收录你认为需要直连的国内冷门域名，请参考 Wiki 对应章节：[关于国内冷门域名的收录](https://github.com/Aethersailor/Custom_OpenClash_Rules/wiki/%E5%85%B6%E4%BB%96%E8%AF%B4%E6%98%8E#%E5%85%B3%E4%BA%8E%E5%86%B7%E9%97%A8%E5%9B%BD%E5%86%85%E5%9F%9F%E5%90%8D%E7%9A%84%E6%94%B6%E5%BD%95)
+另外，**本项目可能是同类项目中唯一一个会定期向 GeoSite 提交直连域名的项目。**
+
+如果希望本项目或者 GeoSite 数据库永久收录你认为需要直连的国内冷门域名，请按照如下内容进行操作：[关于国内冷门域名的收录](https://github.com/Aethersailor/Custom_OpenClash_Rules/wiki/%E5%85%B6%E4%BB%96%E8%AF%B4%E6%98%8E#%E5%85%B3%E4%BA%8E%E5%86%B7%E9%97%A8%E5%9B%BD%E5%86%85%E5%9F%9F%E5%90%8D%E7%9A%84%E6%94%B6%E5%BD%95)  
 
 ## 关于广告过滤  
 
@@ -113,13 +134,13 @@ OpenClash 无疑是 OpenWrt 中最强大的科学上网软件，它可以实现�
 
 具体设置见 Wiki 中的方案：[广告拦截设置方案](https://github.com/Aethersailor/Custom_OpenClash_Rules/wiki/%E6%97%A0%E6%8F%92%E4%BB%B6%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%E5%8A%9F%E8%83%BD%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%A1%88)  
 
+内含一键设置脚本和手动添加两种方式。  
+
 其中提供了 Dnsmasq 格式和 hosts 格式的两种设置方法的示例，可以照抄，亦可自由设置其他任何符合格式要求的广告规则。
 
 ## 关于 IPv6  
 
-谁说 OpenClash 不能和 IPv6 同时工作？  
-
-通过正确设置 OpenWrt 的 IPv6 功能以及 OpenClash，即可实现 IPv6 和 OpenClash 的完美兼容。在实现 IPv6 国内外分流代理的同时，还能完美通过 IPv6-Test 的国内和国外镜像站点测试。  
+通过正确设置 OpenWrt 的 IPv6 功能以及 OpenClash，即可实现 OpenWrt 主路由下的 IPv6 和 OpenClash 的完美兼容。在实现 IPv6 国内外分流代理的同时，还能完美通过 IPv6-Test 的国内和国外镜像站点测试。  
 
 OpenWrt 的 IPv6 设置方案见本项目的 Wiki：[OpenWrt-IPv6-设置方案](https://github.com/Aethersailor/Custom_OpenClash_Rules/wiki/OpenWrt-IPv6-设置方案)  
 
@@ -143,11 +164,13 @@ https://api.asailor.org/sub
 
 ## 在 OpenClash 之外的其他软件中是否可用？  
 
-对于 OpenClash 以外的使用环境，可以参考维护者的另一个项目：[Custom_Clash_Rules](https://github.com/Aethersailor/Custom_Clash_Rules)
+对于 OpenClash 以外的使用环境，也可以参考维护者的另一个项目：[Custom_Clash_Rules](https://github.com/Aethersailor/Custom_Clash_Rules)
 
 适用于 iOS 下 Shadowrocket 的规则：https://github.com/Aethersailor/Custom_Shadowrocket_Rules  
 
 测试状态，尚不完善  
+
+***
 
 # 机场推荐 
 
@@ -170,7 +193,7 @@ https://api.asailor.org/sub
 
 - 全部节点解锁 ChatGPT
 
-- 部分节点支持 IPv6 出站
+- 部分节点支持 IPv6 **出站**，可以通过节点访问 IPv6 网站  
 
 - 部分节点支持 FullCone 全锥形 NAT
 
@@ -180,7 +203,7 @@ https://api.asailor.org/sub
 
 - 工单支持简体中文沟通且客服反应迅速
 
-注册链接：[SSRDOG 注册](https://dog1.ssrdog10.com/#/register?code=FnSb4oWM)  (链接包含 aff 信息，感谢支持！)
+注册链接：[SSRDOG 注册](https://st1.hosbb.com/#/register?code=FnSb4oWM)  (链接包含 aff 信息，感谢支持！)
 
 本项目订阅模板的节点地区分类即参考了该机场的节点地区进行分类。  
 
@@ -193,16 +216,25 @@ Traffic、GB、Expire
 
 不屏蔽不影响使用，只是会让节点列表看着更整洁一些  
 
-# 控制面板效果截图  
+# 其他推荐项目  
 
-历史截图，可能和当前版本不一致，仅供示意  
+本项目维护者在使用的一些值得推荐的其他开发者的项目。  
 
-![](https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/doc/openclash/pics/db2.png)  
+## Clash Dash  
+
+Clash Dash 是一款在 iOS 下使用原生 SwiftUI 开发的 OpenClash/MihomoTProxy 管理工具。  
+
+点击直达：[Clash-Dash](https://github.com/bin64/Clash-Dash)  
+
+非常漂亮的APP，可以说是 iOS 下最方便最优雅的 Clash 管理方式。
 
 # 贡献者  
+
 <a href="https://github.com/Aethersailor/Custom_OpenClash_Rules/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Aethersailor/Custom_OpenClash_Rules" />
 </a>  
+
+***
 
 # 感谢  
 
@@ -210,40 +242,46 @@ Traffic、GB、Expire
 
 以下排名不分先后
 
-- [vernesong / OpenClash](https://github.com/vernesong/OpenClash)
+- [vernesong/OpenClash](https://github.com/vernesong/OpenClash)
 
-- [MetaCubeX / mihomo](https://github.com/MetaCubeX/mihomo)
+- [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo)
 
-- [ACL4SSR / ACL4SSR](https://github.com/ACL4SSR/ACL4SSR)
+- [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR)
 
-- [blackmatrix7 / ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)
+- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)
 
-- [v2fly / domain-list-community](https://github.com/v2fly/domain-list-community)
+- [v2fly/domain-list-community](https://github.com/v2fly/domain-list-community)
 
-- [Loyalsoldier / v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)
+- [felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)
 
-- [TraderWukong / demo](https://github.com/TraderWukong/demo)
+- [Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)
 
-- [dogfight360 / UsbEAm](https://github.com/dogfight360/UsbEAm)
+- [TraderWukong/demo](https://github.com/TraderWukong/demo)
 
-- [ddgksf2013 / ddgksf2013](https://github.com/ddgksf2013/ddgksf2013)
+- [dogfight360/UsbEAm](https://www.dogfight360.com/blog/18627/)
 
-- [privacy-protection-tools / anti-AD](https://github.com/privacy-protection-tools/anti-AD)
+- [ddgksf2013/ddgksf2013](https://github.com/ddgksf2013/ddgksf2013)
 
-- [TG-Twilight / AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule)
+- [217heidai/adblockfilters](https://github.com/217heidai/adblockfilters)
 
-- [521xueweihan / GitHub520](https://github.com/521xueweihan/GitHub520)
+- [privacy-protection-tools/anti-AD](https://github.com/privacy-protection-tools/anti-AD)
 
-- [immortalwrt / user-FAQ](https://github.com/immortalwrt/user-FAQ/)
+- [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule)
 
-- [ChatGPT / OpenAI](https://chatgpt.com/)
+- [521xueweihan/GitHub520](https://github.com/521xueweihan/GitHub520)
 
+- [immortalwrt/user-FAQ](https://github.com/immortalwrt/user-FAQ/)
 
+- [ChatGPT/OpenAI](https://chatgpt.com/)
+
+***
 
 # 许可		
 [![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)
 * CC-BY-SA-4.0  
 * 强烈鄙视所有不遵循 LICENSE 的行为。  
+
+***
 
 # 星标记录
 
@@ -254,3 +292,11 @@ Traffic、GB、Expire
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Aethersailor/Custom_OpenClash_Rules&type=Date" />
  </picture>
 </a>
+
+***
+
+# 访问记录
+
+![:访问数](https://count.getloli.com/@:Custom_OpenClash_Rules?theme=sketch-1)  
+
+2025年2月开始统计  
