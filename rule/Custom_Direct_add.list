@@ -10,3 +10,6 @@ DOMAIN-SUFFIX,xiangjiabao.com
 
 # roborock
 DOMAIN-SUFFIX,roborock.com
+
+# 公司mac
+SRC-IP-CIDR,192.168.5.169
