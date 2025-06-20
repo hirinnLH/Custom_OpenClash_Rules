@@ -3,5 +3,5 @@
 # REPO: https://github.com/hirinnLH/Custom_OpenClash_Rules
 # 使用較為低廉的節點gfw.gg來觀看直播頻道
 
-IP-CIDR,104.199.254.207
+IP-CIDR,104.199.254.207/32,no-resolve
 
