@@ -766,6 +766,15 @@ proxy-groups:
     interval: 300
     tolerance: 50
 
+  - name: "🇦🇺 澳洲节点"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    filter: "(?i)(澳洲|Australia|悉尼|墨尔本|🇦🇺)"
+    use:
+      - provider1
+    interval: 300
+    tolerance: 50  
+
   - name: "🇰🇷 韩国节点"
     type: url-test
     url: https://www.gstatic.com/generate_204
