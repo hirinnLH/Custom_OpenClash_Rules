@@ -1,0 +1,8 @@
+# Generated from rule/Custom_Direct_Add.list
+# REPO: https://github.com/hirinnLH/Custom_OpenClash_Rules
+# SOURCE: https://github.com/hirinnLH/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct_Add.list
+# TOTAL: 359
+
+payload:
+  - DOMAIN-SUFFIX,xiangjiabao.com
+  - DOMAIN-SUFFIX,roborock.com
