@@ -1,0 +1,8 @@
+# Generated from rule/Custom_Direct_Taiwan.list
+# REPO: https://github.com/hirinnLH/Custom_OpenClash_Rules
+# SOURCE: https://github.com/hirinnLH/Custom_OpenClash_Rules/blob/main/rule/Custom_Taiwan.list
+# TOTAL: 359
+
+payload:
+  - DOMAIN-SUFFIX,amiwecarelife.com
+  - DOMAIN-SUFFIX,gov.tw
