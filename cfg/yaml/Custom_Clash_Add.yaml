@@ -863,6 +863,7 @@ rules:
 - "GEOSITE,private,🎯 全球直连"
 - "GEOIP,private,🎯 全球直连,no-resolve"
 - "RULE-SET,Custom_Direct,🎯 全球直连"
+- "RULE-SET,Custom_Direct_Add,🎯 全球直连"
 - "RULE-SET,Custom_Proxy,🚀 手动选择"
 - "GEOSITE,google-cn,🎯 全球直连"
 - "GEOSITE,category-games@cn,🎯 全球直连"
@@ -891,6 +892,7 @@ rules:
 - "GEOSITE,category-emby,🎥 Emby"
 - "GEOSITE,spotify,🎻 Spotify"
 - "GEOSITE,bahamut,📺 Bahamut"
+- "RULE-SET,Custom_Taiwan,🇹🇼 指定台灣"
 - "GEOSITE,category-games,🎮 游戏平台"
 - "GEOSITE,category-entertainment,🌎 国外媒体"
 - "GEOSITE,category-ecommerce,🛒 国外电商"
@@ -930,6 +932,14 @@ rule-providers:
     type: http
     url: "https://testingcf.jsdelivr.net/gh/hirinnLH/Custom_OpenClash_Rules@add_custom_rules/rule/Custom_Direct_Add.yaml"
     proxy: DIRECT  
+
+  Custom_Taiwan:
+    behavior: classical
+    interval: 10800
+    path: ./rule_provider/Custom_Taiwan.yaml
+    type: http
+    url: "https://testingcf.jsdelivr.net/gh/hirinnLH/Custom_OpenClash_Rules@add_custom_rules/rule/Custom_Taiwan.yaml"
+    proxy: DIRECT    
 
   Custom_Proxy:
     behavior: classical
